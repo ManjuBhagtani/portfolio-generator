@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import Header from './Bootstrap/Header';
 class App extends Component {
+  state={
+    Dark: false
+  };
   render() {
     return (
       <div className="App">
-        <Header>Portfolio Generator</Header>
+        <Header dark={this.state.Dark}>Portfolio Generator</Header>
       </div>
     )
   }
