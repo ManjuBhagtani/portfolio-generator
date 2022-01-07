@@ -13,10 +13,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header dark={this.state.Dark} className='mb-5 justify-content-center'>
-          Portfolio Generator
+        <Header dark={this.state.Dark} className='Header'>
+          <span>Portfolio Generator</span>
           <button 
-            className="btn btn-sm btn-outline-primary ml-3 rounded-circle" 
+            className="btn btn-sm btn-outline-primary rounded-circle" 
             onClick={this.toggleHeader}
           >
             <i 
