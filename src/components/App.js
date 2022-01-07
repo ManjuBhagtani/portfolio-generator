@@ -24,6 +24,12 @@ class App extends Component {
             ></i>
           </button>
         </Header>
+        <div className='container-fluid'>
+          <div className='row'>
+            <div className='col-12 col-sm-6'>Form</div>
+            <div className='col-12 col-sm-6'>Code</div>
+          </div>
+        </div>
       </div>
     )
   }
