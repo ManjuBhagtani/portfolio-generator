@@ -6,13 +6,12 @@ class App extends Component {
   state={
     Dark: true,
     FormData: {
-      FullName:"Value of FullName",
+      FirstName:"Value of FullName",
+      LastName:"Value of FullName",
       Thubmnail:"Value of FullName",
       URL:"Value of FullName",
       Description:"Value of FullName",
       Keywords:"Value of FullName",
-      FirstName:"Value of FullName",
-      LastName:"Value of FullName",
       Address:"Value of FullName",
       Phone:"Value of FullName",
       Email:"Value of FullName"
@@ -41,10 +40,17 @@ class App extends Component {
         <div className='container-fluid'>
           <div className='row'>
             <div className='col-12 col-sm-6'>
-              <Form FormData={this.state.FormData}/>
+              <Form FormData={{
+                FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
+                ...this.state.FormData
+                }}
+              />
             </div>
             <div className='col-12 col-sm-6'>
-              <Code {...this.state.FormData}/>
+              <Code 
+                {...this.state.FormData} 
+                FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
+              />
             </div>
           </div>
         </div>
