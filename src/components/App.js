@@ -4,7 +4,19 @@ import Code from './Code';
 import Form from './Form';
 class App extends Component {
   state={
-    Dark: false
+    Dark: true,
+    FormData: {
+      FullName:"Value of FullName",
+      Thubmnail:"Value of FullName",
+      URL:"Value of FullName",
+      Description:"Value of FullName",
+      Keywords:"Value of FullName",
+      FirstName:"Value of FullName",
+      LastName:"Value of FullName",
+      Address:"Value of FullName",
+      Phone:"Value of FullName",
+      Email:"Value of FullName"
+    }
   };
   toggleHeader=()=>{
     this.setState({
@@ -28,8 +40,12 @@ class App extends Component {
         </Header>
         <div className='container-fluid'>
           <div className='row'>
-            <div className='col-12 col-sm-6'><Form/></div>
-            <div className='col-12 col-sm-6'><Code/></div>
+            <div className='col-12 col-sm-6'>
+              <Form FormData={this.state.FormData}/>
+            </div>
+            <div className='col-12 col-sm-6'>
+              <Code {...this.state.FormData}/>
+            </div>
           </div>
         </div>
       </div>
