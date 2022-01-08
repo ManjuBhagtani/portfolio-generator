@@ -6,15 +6,15 @@ class App extends Component {
   state={
     Dark: true,
     FormData: {
-      FirstName:"Value of FullName",
-      LastName:"Value of FullName",
-      Thubmnail:"Value of FullName",
-      URL:"Value of FullName",
-      Description:"Value of FullName",
-      Keywords:"Value of FullName",
-      Address:"Value of FullName",
-      Phone:"Value of FullName",
-      Email:"Value of FullName"
+      FirstName:"Value of FirstName",
+      LastName:"Value of LastName",
+      Thubmnail:"Value of Thubmnail",
+      URL:"Value of URL",
+      Description:"Value of Description",
+      Keywords:"Value of Keywords",
+      Address:"Value of Address",
+      Phone:"Value of Phone",
+      Email:"Value of Email"
     }
   };
   toggleHeader=()=>{
@@ -22,7 +22,7 @@ class App extends Component {
       Dark: !this.state.Dark,
     })
   };
-  
+  handleChange=()=>{}
   render() {
     return (
       <div className="App">
