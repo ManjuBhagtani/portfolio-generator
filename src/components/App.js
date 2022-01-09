@@ -6,15 +6,15 @@ class App extends Component {
   state={
     Dark: true,
     FormData: {
-      FirstName:"Value of FirstName",
-      LastName:"Value of LastName",
-      Thubmnail:"Value of Thubmnail",
-      URL:"Value of URL",
-      Description:"Value of Description",
-      Keywords:"Value of Keywords",
-      Address:"Value of Address",
-      Phone:"Value of Phone",
-      Email:"Value of Email"
+      FirstName:"",
+      LastName:"",
+      Thubmnail:"",
+      URL:"",
+      Description:"",
+      Keywords:"",
+      Address:"",
+      Phone:"",
+      Email:""
     }
   };
   toggleHeader=()=>{
