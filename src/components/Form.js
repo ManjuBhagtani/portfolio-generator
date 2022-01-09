@@ -5,7 +5,7 @@ const Form = ({FormData, onChange}) => {
       FullName: [
           "text", 
           "Full Name", 
-          "This is your full name."
+          "This is your full name. This has been generated using your first and last names."
         ],
       FirstName: [
           "text", 
@@ -65,6 +65,7 @@ const Form = ({FormData, onChange}) => {
                     Value={FormData[fd]}
                     Placeholder={`Enter something for ${Desc[fd][1]}`}
                     onChange={fd === "FullName" ? () => {} : onChange}
+                    readOnly={fd === "FullName" ? true : undefined}
                 />
             ))}
         </div>

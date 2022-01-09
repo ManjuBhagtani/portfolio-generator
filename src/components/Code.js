@@ -73,7 +73,7 @@ const Code = ({
                         <span class="text-primary">${LastName}</span>
                     </h1>
                     <div class="subheading mb-5">
-                        ${Address} &bull' ${Phone} &bull;
+                        ${Address} &bull; ${Phone} &bull;
                         <a href="mailto:${Email}">${Email}</a>
                     </div>
                     <p class="lead mb-5">${Description}</p>
