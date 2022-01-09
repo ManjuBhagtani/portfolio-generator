@@ -23,7 +23,12 @@ class App extends Component {
     })
   };
   handleChange = (e) => {
-    console.log(`${e.target.name}: ${e.target.value}`);
+    this.setState({
+      FormData:{
+        ...this.state.FormData,
+        [e.target.name]: e.target.value
+      }     
+    })
   }
   render() {
     return (
