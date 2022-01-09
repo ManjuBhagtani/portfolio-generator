@@ -55,7 +55,9 @@ const Form = ({FormData, onChange}) => {
     }
     return (
         <div className="Form">
-            {Object.keys(FormData).map(fd => (
+            {Object.keys(FormData).map(
+              fd => 
+                Object.keys(Desc).includes(fd) && (
                 <FormGroup 
                     key={fd} 
                     Label={Desc[fd][1]} 
