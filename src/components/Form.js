@@ -78,8 +78,17 @@ const Form = ({FormData, onChange}) => {
           <h3>Education</h3>
           <Education Educations={FormData.Education}/>
           <h3>Skills</h3>
+          <pre className="border rounded bg-light p-2">
+            {JSON.stringify(FormData.Skills, null, 2)}
+          </pre>
           <h3>Interests</h3>
+          <pre className="border rounded bg-light p-2">
+            {JSON.stringify(FormData.Interests, null, 2)}
+          </pre>
           <h3>Awards</h3>
+          <pre className="border rounded bg-light p-2">
+            {JSON.stringify(FormData.Awards, null, 2)}
+          </pre>
         </div>
     )
 }
