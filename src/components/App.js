@@ -15,6 +15,15 @@ class App extends Component {
       Address:"Maharashtra, India",
       Phone:"+91 9999999999",
       Email:"xyzabcgmail.com",
+      Socials: {
+        Facebook: "xyz",
+        WhatsApp: "xyz",
+        Instagram: "xyz",
+        Twitter: "xyz",
+        LinkedIn: "xyz",
+        GitHub: "xyz",
+        StackOverflow: "xyz"
+      },
       Experience: [
         {
           Role: "Awesome Developer",
