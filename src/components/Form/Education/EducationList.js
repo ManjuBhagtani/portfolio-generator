@@ -4,7 +4,7 @@ import Education from './Education';
 import { connect } from 'react-redux';
 import { removeEducation } from './actions';
 
-const EducationList = ({ educations = [{education: {university: 'VJTI'}}], onRemovePressed }) => {
+const EducationList = ({ educations = [], onRemovePressed }) => {
     return(
     <div>
         <div className="container mb-3">
