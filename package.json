@@ -8,6 +8,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "gh-pages": "^3.2.3",
+    "he": "^1.2.0",
     "moment": "^2.29.1",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",

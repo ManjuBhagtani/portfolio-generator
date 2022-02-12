@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Bootstrap/Header';
 import Code from './Code';
 import Form from './Form';
+import he from 'he';
 class App extends Component {
   state={
     Dark: true,
@@ -24,13 +25,16 @@ class App extends Component {
         GitHub: "xyz",
         StackOverflow: "xyz"
       },
-    }
+    },
+    fileDownloadUrl: null
   };
+
   toggleHeader=()=>{
     this.setState({
       Dark: !this.state.Dark,
     })
   };
+
   handleChange = (e) => {
     this.setState({
       FormData:{
@@ -39,6 +43,19 @@ class App extends Component {
       }     
     })
   }
+
+  download=(event)=>{
+    let output = he.decode(document.getElementsByClassName("codefile")[0].innerHTML);
+    const blob = new Blob([output]);
+    const fileDownloadUrl = URL.createObjectURL(blob);
+    this.setState({fileDownloadUrl: fileDownloadUrl}, 
+      ()=> {
+        this.doFileDownload.click();
+        URL.revokeObjectURL(fileDownloadUrl);
+        this.setState({fileDownloadUrl: ""});
+      });
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,6 +79,18 @@ class App extends Component {
                 }}
                 onChange={this.handleChange}
               />
+              <button 
+                className="btn btn-success"
+                onClick={()=>{this.download()}}>
+                Download
+              </button>
+              <a 
+                className="d-none"
+                download={'portfolio.html'}
+                href={this.state.fileDownloadUrl}
+                ref={e=> this.doFileDownload = e}>
+                Download
+              </a>
             </div>
             <div className='col-12 col-md-6'>
               <Code 

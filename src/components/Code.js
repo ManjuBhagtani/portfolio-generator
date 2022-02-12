@@ -29,7 +29,7 @@ const Code = ({
     };
     return (
         <div className="Code">
-            <pre className="border rounded bg-light p-3">              
+            <pre className="border rounded bg-light p-3 codefile">              
 {`<!DOCTYPE html>
 <html lang="en">
     <head>
