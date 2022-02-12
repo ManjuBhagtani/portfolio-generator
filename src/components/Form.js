@@ -3,6 +3,7 @@ import AwardList from "./Form/Awards/AwardList";
 import EducationList from "./Form/Education/EducationList";
 import ExperienceList from "./Form/Experience/ExperienceList";
 import InterestList from "./Form/Interests/InterestList";
+import SkillsList from "./Form/Skills/SkillsList";
 
 const Form = ({FormData, onChange}) => {
     const Desc = {
@@ -80,9 +81,7 @@ const Form = ({FormData, onChange}) => {
           <h3>Education</h3>
           <EducationList/>
           <h3>Skills</h3>
-          <pre className="border rounded bg-light p-2">
-            {JSON.stringify(FormData.Skills, null, 2)}
-          </pre>
+          <SkillsList />
           <h3>Interests</h3>
           <InterestList />
           <h3>Awards</h3>
