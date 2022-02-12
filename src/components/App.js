@@ -25,20 +25,6 @@ class App extends Component {
         StackOverflow: "xyz"
       },
       Experience: [
-        {
-          Role: "Awesome Developer",
-          Company: "Google",
-          Desc: "Worked as an awesome developer at Google.",
-          Start: "Jan 2020",
-          End: "Dec 2020"
-        },
-        {
-          Role: "Fantastic Developer",
-          Company: "Microsoft",
-          Desc: "Workeing as a fantastic developer at Microsoft.",
-          Start: "Jan 2021",
-          End: "Present"
-        }
       ],
       Education: [
         {
@@ -102,7 +88,7 @@ class App extends Component {
         </Header>
         <div className='container-fluid'>
           <div className='row'>
-            <div className='col-12 col-sm-6'>
+            <div className='col-12 col-md-6'>
               <Form FormData={{
                 FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
                 ...this.state.FormData
@@ -110,7 +96,7 @@ class App extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className='col-12 col-sm-6'>
+            <div className='col-12 col-md-6'>
               <Code 
                 {...this.state.FormData} 
                 FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}

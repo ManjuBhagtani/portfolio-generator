@@ -1,6 +1,6 @@
 import FormGroup from "./Bootstrap/FormGroup"
 import Education from "./Form/Education"
-import Experience from "./Form/Experience"
+import ExperienceList from "./Form/Experience/ExperienceList";
 
 const Form = ({FormData, onChange}) => {
     const Desc = {
@@ -74,7 +74,7 @@ const Form = ({FormData, onChange}) => {
                 />
             ))}
           <h3>Experience</h3>
-          <Experience Experiences={FormData.Experience} />
+          <ExperienceList />
           <h3>Education</h3>
           <Education Educations={FormData.Education}/>
           <h3>Skills</h3>
