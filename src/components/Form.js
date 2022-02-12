@@ -1,5 +1,5 @@
 import FormGroup from "./Bootstrap/FormGroup"
-import Education from "./Form/Education"
+import EducationList from "./Form/Education/EducationList";
 import ExperienceList from "./Form/Experience/ExperienceList";
 
 const Form = ({FormData, onChange}) => {
@@ -76,7 +76,7 @@ const Form = ({FormData, onChange}) => {
           <h3>Experience</h3>
           <ExperienceList />
           <h3>Education</h3>
-          <Education Educations={FormData.Education}/>
+          <EducationList/>
           <h3>Skills</h3>
           <pre className="border rounded bg-light p-2">
             {JSON.stringify(FormData.Skills, null, 2)}

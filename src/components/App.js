@@ -27,13 +27,6 @@ class App extends Component {
       Experience: [
       ],
       Education: [
-        {
-          Degree: "MCA",
-          Institute: "PQR",
-          Desc: "Learnt DSA, DBMS, OS",
-          Start: "Aug 2017",
-          End: "Aug 2020"
-        }
       ],
       Skills: {
         Tools: ["html5", "css3", "react"],

@@ -13,7 +13,7 @@ const Code = ({
     Email,
     Socials,
     experiences,
-    Education,
+    educations,
     Skills,
     Interests,
     Awards
@@ -119,7 +119,7 @@ const Code = ({
                         <div class="flex-shrink-0"><span class="text-primary">${experience.experience.start} - ${experience.experience.end ? experience.experience.end : experience.experience.presentJob ? "Present" : ""}</span></div>
                     </div>`
                     ).join(`
-                            `)}
+                    `)}
                 </div>
             </section>
             <hr class="m-0" />
@@ -127,23 +127,18 @@ const Code = ({
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    ${educations.map(
+                        education =>
+                        `<div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Colorado Boulder</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science - Web Development Track</div>
-                            <p>GPA: 3.23</p>
+                            <h3 class="mb-0">${education.education.university}</h3>
+                            <div class="subheading mb-3">${education.education.degree}</div>
+                            <p>GPA: ${education.education.gpa}</p>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">James Buchanan High School</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
+                        <div class="flex-shrink-0"><span class="text-primary">${education.education.start} - ${education.education.end ? education.education.end : education.education.presentJob ? "Present" : ""}</span></div>
+                    </div>`
+                    ).join(`
+                    `)}
                 </div>
             </section>
             <hr class="m-0" />
@@ -258,6 +253,7 @@ const Code = ({
 
 const mapStateToProps = state =>({
     experiences: state.experiences,
+    educations: state.educations,
 });
 
 export default connect(mapStateToProps)(Code);
