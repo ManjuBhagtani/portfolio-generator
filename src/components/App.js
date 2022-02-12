@@ -6,15 +6,15 @@ class App extends Component {
   state={
     Dark: true,
     FormData: {
-      FirstName:"xyz",
-      LastName:"abc",
+      FirstName:"",
+      LastName:"",
       Thubmnail:"",
-      URL:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.warmoven.in%2Fpikachu-photo-cake-2.html&psig=AOvVaw0mAt1oOLcy0krLwUkSgiSX&ust=1641834124052000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKD5hPKSpfUCFQAAAAAdAAAAABAD",
-      Description:"Hello World!",
-      Keywords:"abc, xyz, Software Engineer",
-      Address:"Maharashtra, India",
-      Phone:"+91 9999999999",
-      Email:"xyzabcgmail.com",
+      URL:"",
+      Description:"",
+      Keywords:"",
+      Address:"",
+      Phone:"",
+      Email:"",
       Socials: {
         Facebook: "xyz",
         WhatsApp: "xyz",
