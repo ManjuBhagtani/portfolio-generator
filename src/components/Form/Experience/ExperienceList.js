@@ -9,7 +9,7 @@ const ExperienceList = ({ experiences = [], onRemovePressed }) => {
     <div>
         <NewExperienceForm />
         <div className="container mb-3">
-            {experiences.map(experience => <Experience experience={experience} onRemovePressed={onRemovePressed}/>)}
+            {experiences.map(experience => <Experience experience={experience.experience} onRemovePressed={onRemovePressed}/>)}
         </div>
     </div>
     )
@@ -20,7 +20,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onRemovePressed: text => dispatch(removeExperience(text)),
+    onRemovePressed: experience => dispatch(removeExperience(experience)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExperienceList);

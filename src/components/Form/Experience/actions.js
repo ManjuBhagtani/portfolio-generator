@@ -7,7 +7,7 @@ export const createExperience = experience => ({
 
 export const REMOVE_EXPERIENCE = 'REMOVE_EXPERIENCE';
 
-export const removeExperience = text => ({
+export const removeExperience = experience => ({
     type: REMOVE_EXPERIENCE,
-    payload: {text}
+    payload: {experience}
 });

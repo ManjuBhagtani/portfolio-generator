@@ -12,8 +12,8 @@ export const experiences = (state=[], action) =>{
             return state.concat(newExperience);
         }
         case REMOVE_EXPERIENCE: {
-            const {text} = payload;
-            return state.filter(experience => experience.text !== text);
+            const {experience} = payload;
+            return state.filter(exp => exp.experience.position !== experience.position);
         }
         default: 
             return state;

@@ -6,25 +6,25 @@ const Experience = ({ experience, onRemovePressed}) =>{
             <div className="card-body">
                 <div className="row"> 
                     <div class="col-xl-2 col-3">Role: </div>
-                    <div class="col-xl-4 col-9">{experience.experience.position}</div>
+                    <div class="col-xl-4 col-9">{experience.position}</div>
                     <div class="col-xl-2 col-3">Company: </div>
-                    <div class="col-xl-4 col-9">{experience.experience.company}</div>
+                    <div class="col-xl-4 col-9">{experience.company}</div>
                 </div>
                 <div className="row"> 
                     <div class="col-2">Start: </div>
-                    <div class="col-4">{experience.experience.start}</div>
+                    <div class="col-4">{experience.start}</div>
                     <div class="col-2">End: </div>
-                    <div class="col-4">{experience.experience.end}</div>
+                    <div class="col-4">{experience.end}</div>
                 </div>
                 <div className="row">
                     <div className="col-sm-2">Description:</div>
-                    <div className="col-sm-10">{experience.experience.desc}</div>
+                    <div className="col-sm-10">{experience.desc}</div>
                 </div>
             </div>
             <div className="text-right">
                 <button 
                     className="btn btn-danger btn-sm"
-                    onClick={() => onRemovePressed(experience.text)}
+                    onClick={() => onRemovePressed(experience)}
                 >
                     Remove
                 </button>
