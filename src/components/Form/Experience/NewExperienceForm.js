@@ -60,9 +60,9 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
                     />
                 </div>
                 <div className="col">
-                    <div class="form-check">
+                    <div className="form-check">
                         <input 
-                            class="form-check-input" 
+                            className="form-check-input" 
                             type="checkbox" 
                             value={presentJob} 
                             id="presentJob"
@@ -72,7 +72,7 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
                             }}
                             disabled={end !== ''}
                         />
-                        <label class="form-check-label" for="presentJob">
+                        <label className="form-check-label" htmlFor="presentJob">
                             Present
                         </label>
                     </div>

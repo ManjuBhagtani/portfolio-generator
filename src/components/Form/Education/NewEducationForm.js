@@ -61,9 +61,9 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
                     />
                 </div>
                 <div className="col">
-                    <div class="form-check">
+                    <div className="form-check">
                         <input 
-                            class="form-check-input" 
+                            className="form-check-input" 
                             id="presentUniversity"
                             type="checkbox" 
                             value={presentUniversity} 
@@ -73,7 +73,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
                             }}
                             disabled={end !== ''}
                         />
-                        <label class="form-check-label" for="presentUniversity">
+                        <label className="form-check-label" htmlFor="presentUniversity">
                             Present
                         </label>
                     </div>
