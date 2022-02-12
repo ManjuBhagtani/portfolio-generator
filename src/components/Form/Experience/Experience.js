@@ -14,7 +14,7 @@ const Experience = ({ experience, onRemovePressed}) =>{
                     <div class="col-2">Start: </div>
                     <div class="col-4">{experience.start}</div>
                     <div class="col-2">End: </div>
-                    <div class="col-4">{experience.end}</div>
+                    <div class="col-4">{experience.end ? experience.end : experience.presentJob ? "Present" : ""}</div>
                 </div>
                 <div className="row">
                     <div className="col-sm-2">Description:</div>

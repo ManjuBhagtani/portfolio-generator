@@ -1,14 +1,18 @@
 import React, { useState } from "react";
+import {DatePickerComponent} from '@syncfusion/ej2-react-calendars';
+import moment from 'moment';
 import { connect } from "react-redux";
 import { createExperience } from "./actions";
-//import { experiences } from "./reducers";
 
 const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
 
     const [position, setPosition] = useState('');
     const [company, setCompany] = useState('');
     const [desc, setDesc] = useState('');
-
+    const [start, setStartDate] = useState('');
+    const [end, setEndDate] = useState('');
+    const [presentJob, setPresentJob] = useState(false);
+    const [endDateEnabled, setEndDateEnabled] = useState(true);
     return(
     <div className="border rounded bg-light p-3 m-2">
             <input 
@@ -32,14 +36,60 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
                 value={desc}
                 onChange={e => setDesc(e.target.value)}
             />
+            <div className="row mb-2">
+                <div className="col">
+                     <DatePickerComponent 
+                        placeholder="Start Date"
+                        format="MMM-yyyy"
+                        start="Year"
+                        depth="Year"
+                        value={start}
+                        onChange={e=> setStartDate(moment(e.target.value).format("MMMM-YYYY"))}
+                    />
+                </div>
+                <div className="col">
+                     <DatePickerComponent 
+                        placeholder="End Date"
+                        format="MMM-yyyy"
+                        start="Year"
+                        depth="Year"
+                        value={end}
+                        onChange={e=> setEndDate(moment(e.target.value).format("MMMM-YYYY"))}
+                        enabled={endDateEnabled}
+                        cleared={()=>setEndDate('')}
+                    />
+                </div>
+                <div className="col">
+                    <div class="form-check">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            value={presentJob} 
+                            id="presentJob"
+                            onChange={e => {
+                                setPresentJob(e.target.checked);
+                                setEndDateEnabled(!endDateEnabled);
+                            }}
+                            disabled={end !== ''}
+                        />
+                        <label class="form-check-label" for="presentJob">
+                            Present
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
         <div className="text-right">
             <button 
                 className="btn btn-success btn-sm"
                 onClick={()=>{
-                    onCreatePressed({position, company, desc});
+                    onCreatePressed({position, company, desc, start, end, presentJob});
                     setPosition('');
                     setCompany('');
-                    setDesc('');
+                    setDesc('')
+                    setStartDate('');
+                    setEndDate('');
+                    setPresentJob(false);
                 }}
             >
                 Add experience

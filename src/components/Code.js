@@ -116,7 +116,7 @@ const Code = ({
                             <div class="subheading mb-3">${experience.experience.company}</div>
                             <p>${experience.experience.desc}</p>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">${experience.experience.start} - ${experience.experience.end}</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">${experience.experience.start} - ${experience.experience.end ? experience.experience.end : experience.experience.presentJob ? "Present" : ""}</span></div>
                     </div>`
                     ).join(`
                             `)}
