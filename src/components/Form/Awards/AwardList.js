@@ -7,8 +7,8 @@ import { removeAward } from './actions';
 const AwardList = ({ awards = [], onRemovePressed }) => {
     return(
     <div>
+        <NewAwardForm />
         <div className="container mb-3">
-            <NewAwardForm />
             {awards.map(award => <Award award={award.award} onRemovePressed={onRemovePressed}/>)}
         </div>
     </div>

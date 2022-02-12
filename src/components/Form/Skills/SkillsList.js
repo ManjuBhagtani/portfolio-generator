@@ -7,8 +7,8 @@ import { removeSkill } from './actions';
 const SkillsList = ({ skills = [], onRemovePressed }) => {
     return(
     <div>
+        <NewSkillForm />
         <div className="container mb-3">
-            <NewSkillForm />
             {skills.map(skill => <Skill skill={skill.skill} onRemovePressed={onRemovePressed}/>)}
         </div>
     </div>

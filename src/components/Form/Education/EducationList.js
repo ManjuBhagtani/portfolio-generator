@@ -7,8 +7,8 @@ import { removeEducation } from './actions';
 const EducationList = ({ educations = [], onRemovePressed }) => {
     return(
     <div>
+        <NewEducationForm />
         <div className="container mb-3">
-            <NewEducationForm />
             {educations.map(education => <Education education={education.education} onRemovePressed={onRemovePressed}/>)}
         </div>
     </div>

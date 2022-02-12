@@ -7,8 +7,8 @@ import { removeInterest } from './actions';
 const InterestList = ({ interests = [], onRemovePressed }) => {
     return(
     <div>
+        <NewInterestForm />
         <div className="container mb-3">
-            <NewInterestForm />
             {interests.map(interest => <Interest interest={interest.interest} onRemovePressed={onRemovePressed}/>)}
         </div>
     </div>
