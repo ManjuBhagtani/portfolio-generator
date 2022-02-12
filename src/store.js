@@ -1,10 +1,12 @@
 import { createStore, combineReducers } from "redux";
 import { experiences } from "./components/Form/Experience/reducers";
 import { educations } from "./components/Form/Education/reducers";
+import { awards } from "./components/Form/Awards/reducers";
 
 const reducers = {
     experiences,
     educations,
+    awards,
 };
 
 const rootReducer = combineReducers(reducers);
