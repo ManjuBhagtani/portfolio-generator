@@ -2,6 +2,7 @@ import FormGroup from "./Bootstrap/FormGroup"
 import AwardList from "./Form/Awards/AwardList";
 import EducationList from "./Form/Education/EducationList";
 import ExperienceList from "./Form/Experience/ExperienceList";
+import InterestList from "./Form/Interests/InterestList";
 
 const Form = ({FormData, onChange}) => {
     const Desc = {
@@ -83,9 +84,7 @@ const Form = ({FormData, onChange}) => {
             {JSON.stringify(FormData.Skills, null, 2)}
           </pre>
           <h3>Interests</h3>
-          <pre className="border rounded bg-light p-2">
-            {JSON.stringify(FormData.Interests, null, 2)}
-          </pre>
+          <InterestList />
           <h3>Awards</h3>
           <AwardList/>
         </div>
