@@ -45,7 +45,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
                         start="Year"
                         depth="Year"
                         value={start}
-                        onChange={e=> setStartDate(moment(e.target.value).format("MMMM-YYYY"))}
+                        onChange={e=> setStartDate(moment(e.target.value).format("MMMM YYYY"))}
                     />
                 </div>
                 <div className="col">
@@ -55,7 +55,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
                         start="Year"
                         depth="Year"
                         value={end}
-                        onChange={e=> setEndDate(moment(e.target.value).format("MMMM-YYYY"))}
+                        onChange={e=> setEndDate(moment(e.target.value).format("MMMM YYYY"))}
                         enabled={endDateEnabled}
                         cleared={()=>setEndDate('')}
                     />
