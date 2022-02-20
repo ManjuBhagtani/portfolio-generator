@@ -3,6 +3,8 @@ import {DatePickerComponent} from '@syncfusion/ej2-react-calendars';
 import moment from 'moment';
 import { connect } from "react-redux";
 import { createEducation } from "./actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
 
@@ -82,7 +84,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
             
         <div className="text-right">
             <button 
-                className="btn btn-success btn-sm"
+                className="btn btn-success btn-sm rounded-circle"
                 onClick={()=>{
                     onCreatePressed({university, degree, gpa, start, end, presentUniversity});
                     setUniversity('');
@@ -93,7 +95,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
                     setPresentUniversity(false);
                 }}
             >
-                Add education
+                <FontAwesomeIcon icon={faPlus} />
             </button>
         </div>
     </div>

@@ -3,6 +3,8 @@ import {DatePickerComponent} from '@syncfusion/ej2-react-calendars';
 import moment from 'moment';
 import { connect } from "react-redux";
 import { createExperience } from "./actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
 
@@ -81,7 +83,7 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
             
         <div className="text-right">
             <button 
-                className="btn btn-success btn-sm"
+                className="btn btn-success btn-sm rounded-circle"
                 onClick={()=>{
                     onCreatePressed({position, company, desc, start, end, presentJob});
                     setPosition('');
@@ -92,7 +94,7 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
                     setPresentJob(false);
                 }}
             >
-                Add experience
+                <FontAwesomeIcon icon={faPlus} />
             </button>
         </div>
     </div>

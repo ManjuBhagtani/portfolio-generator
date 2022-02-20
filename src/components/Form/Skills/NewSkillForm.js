@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createSkill } from "./actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const NewSkillForm = ({ skills=[], onCreatePressed }) =>{
 
@@ -17,13 +19,13 @@ const NewSkillForm = ({ skills=[], onCreatePressed }) =>{
             />          
         <div className="text-right">
             <button 
-                className="btn btn-success btn-sm"
+                className="btn btn-success btn-sm rounded-circle"
                 onClick={()=>{
                     onCreatePressed({skill});
                     setSkill('');
                 }}
             >
-                Add Skill
+                <FontAwesomeIcon icon={faPlus} />
             </button>
         </div>
     </div>

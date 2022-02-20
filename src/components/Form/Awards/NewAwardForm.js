@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createAward } from "./actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const NewAwardForm = ({ awards=[], onCreatePressed }) =>{
 
@@ -17,13 +19,13 @@ const NewAwardForm = ({ awards=[], onCreatePressed }) =>{
             />          
         <div className="text-right">
             <button 
-                className="btn btn-success btn-sm"
+                className="btn btn-success btn-sm rounded-circle"
                 onClick={()=>{
                     onCreatePressed({award});
                     setAward('');
                 }}
             >
-                Add Achievement
+                <FontAwesomeIcon icon={faPlus} />
             </button>
         </div>
     </div>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createInterest } from "./actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const NewInterestForm = ({ interests=[], onCreatePressed }) =>{
 
@@ -17,13 +19,13 @@ const NewInterestForm = ({ interests=[], onCreatePressed }) =>{
             />          
         <div className="text-right">
             <button 
-                className="btn btn-success btn-sm"
+                className="btn btn-success btn-sm rounded-circle"
                 onClick={()=>{
                     onCreatePressed({interest});
                     setInterest('');
                 }}
             >
-                Add Interest
+                <FontAwesomeIcon icon={faPlus} />
             </button>
         </div>
     </div>
