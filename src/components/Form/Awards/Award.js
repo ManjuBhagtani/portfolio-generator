@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 const Award = ({ award, onRemovePressed}) =>{
     return(    
@@ -7,10 +9,10 @@ const Award = ({ award, onRemovePressed}) =>{
                 <div className="col"> {award.award} </div>
                 <div className="col text-right">
                     <button 
-                        className="btn btn-danger btn-sm"
+                        className="btn btn-danger btn-sm rounded-circle"
                         onClick={() => onRemovePressed(award)}
                     >
-                        Remove
+                        <FontAwesomeIcon icon={faMinus} />
                     </button>
                 </div>
             </div>   

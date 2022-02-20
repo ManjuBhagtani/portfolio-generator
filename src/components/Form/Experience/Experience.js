@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 const Experience = ({ experience, onRemovePressed}) =>{
     return(    
@@ -23,10 +25,10 @@ const Experience = ({ experience, onRemovePressed}) =>{
             </div>
             <div className="text-right">
                 <button 
-                    className="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm rounded-circle"
                     onClick={() => onRemovePressed(experience)}
                 >
-                    Remove
+                    <FontAwesomeIcon icon={faMinus} />
                 </button>
             </div>
        </div>
