@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Header from './Bootstrap/Header';
+import Split from "react-split";
 import Code from './Code';
 import Form from './Form';
 import he from 'he';
+
 class App extends Component {
   state={
     Dark: true,
@@ -71,8 +73,11 @@ class App extends Component {
           </button>
         </Header>
         <div className='container-fluid'>
-          <div className='row'>
-            <div className='col-12 col-md-6'>
+          {/* <div className='row'> */}
+            <Split
+              className="split"
+            >
+            <div className="p-3" /*className='col-12 col-md-6'*/>
               <Form FormData={{
                 FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
                 ...this.state.FormData
@@ -92,13 +97,14 @@ class App extends Component {
                 Download
               </a>
             </div>
-            <div className='col-12 col-md-6'>
+            <div className="p-3"/*className='col-12 col-md-6'*/>
               <Code 
                 {...this.state.FormData} 
                 FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
               />
             </div>
-          </div>
+            </Split>
+          {/* </div> */}
         </div>
       </div>
     )
