@@ -47,6 +47,7 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
                         depth="Year"
                         value={start}
                         onChange={e=> setStartDate(moment(e.target.value).format("MMMM YYYY"))}
+                        cleared={()=>setStartDate('')}
                     />
                 </div>
                 <div className="col">
@@ -84,6 +85,12 @@ const NewExperienceForm = ({ experiences=[], onCreatePressed }) =>{
         <div className="text-right">
             <button 
                 className="btn btn-success btn-sm rounded-circle"
+                disabled={position === '' ||
+                          company === '' ||
+                          desc === '' ||
+                          start === '' ||
+                          (end === '' && !presentJob)
+                }
                 onClick={()=>{
                     onCreatePressed({position, company, desc, start, end, presentJob});
                     setPosition('');

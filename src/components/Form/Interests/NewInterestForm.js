@@ -20,6 +20,7 @@ const NewInterestForm = ({ interests=[], onCreatePressed }) =>{
         <div className="text-right">
             <button 
                 className="btn btn-success btn-sm rounded-circle"
+                disabled={interest === ''}
                 onClick={()=>{
                     onCreatePressed({interest});
                     setInterest('');

@@ -48,6 +48,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
                         depth="Year"
                         value={start}
                         onChange={e=> setStartDate(moment(e.target.value).format("MMMM YYYY"))}
+                        cleared={()=>setStartDate('')}
                     />
                 </div>
                 <div className="col">
@@ -85,6 +86,12 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
         <div className="text-right">
             <button 
                 className="btn btn-success btn-sm rounded-circle"
+                disabled={university === '' ||
+                          degree === '' ||
+                          gpa === '' ||
+                          start === '' ||
+                          (end === '' && !presentUniversity)
+                }
                 onClick={()=>{
                     onCreatePressed({university, degree, gpa, start, end, presentUniversity});
                     setUniversity('');
