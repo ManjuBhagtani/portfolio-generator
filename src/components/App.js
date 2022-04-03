@@ -29,7 +29,8 @@ class App extends Component {
         StackOverflow: "xyz"
       }
     },
-    fileDownloadUrl: null
+    fileDownloadUrl: null,
+    PreviewMode: false
   };
 
   toggleHeader = () => {
@@ -103,14 +104,49 @@ class App extends Component {
               </a>
             </div>
             <div className="p-3" /*className='col-12 col-md-6'*/>
-              <Preview
-                {...this.state.FormData}
-                FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
-              />
-              <Code
-                {...this.state.FormData}
-                FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
-              />
+              <ul className="nav nav-tabs mb-2">
+                <li className="nav-item">
+                  <span
+                    className={
+                      "nav-link " + (!this.state.PreviewMode ? "active" : "")
+                    }
+                    onClick={e => {
+                      e.preventDefault();
+                      this.setState({
+                        PreviewMode: false
+                      });
+                    }}
+                  >
+                    Code
+                  </span>
+                </li>
+                <li className="nav-item">
+                  <span
+                    className={
+                      "nav-link " + (this.state.PreviewMode ? "active" : "")
+                    }
+                    onClick={e => {
+                      e.preventDefault();
+                      this.setState({
+                        PreviewMode: true
+                      });
+                    }}
+                  >
+                    Preview
+                  </span>
+                </li>
+              </ul>
+              {this.state.PreviewMode ? (
+                <Preview
+                  {...this.state.FormData}
+                  FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
+                />
+              ) : (
+                <Code
+                  {...this.state.FormData}
+                  FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
+                />
+              )}
             </div>
           </Split>
           {/* </div> */}
