@@ -44,7 +44,12 @@ const Form = ({ FormData, onChange }) => {
       "Phone Number",
       "Please enter your phone number, so we can call you in the midnight!"
     ],
-    Email: ["text", "Email Address", "Tell us your primary email address"]
+    Email: ["text", "Email Address", "Tell us your primary email address"],
+    Colour: [
+      "color",
+      "Theme Colour",
+      "Please choose the colour for your portfolio"
+    ]
   };
   return (
     <div className="Form">

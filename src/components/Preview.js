@@ -16,7 +16,8 @@ const Preview = ({
   educations,
   skills,
   interests,
-  awards
+  awards,
+  Colour
 }) => {
   const Meta = {
     Facebook: ["facebook-f", "https://fb.me/"],
@@ -57,6 +58,7 @@ const Preview = ({
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="https://startbootstrap.github.io/startbootstrap-resume/css/styles.css" rel="stylesheet" />
+    <style>.bg-primary {--bs-bg-opacity: 1; background-color: ${Colour} !important;}</style>
   </head>
   <body id="page-top">
     <!-- Navigation-->
