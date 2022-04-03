@@ -1,23 +1,23 @@
-import React, { Component } from 'react'
-import Header from './Bootstrap/Header';
+import React, { Component } from "react";
+import Header from "./Bootstrap/Header";
 import Split from "react-split";
-import Code from './Code';
-import Form from './Form';
-import he from 'he';
+import Code from "./Code";
+import Form from "./Form";
+import he from "he";
 
 class App extends Component {
-  state={
+  state = {
     Dark: true,
     FormData: {
-      FirstName:"",
-      LastName:"",
-      Thubmnail:"",
-      URL:"",
-      Description:"",
-      Keywords:"",
-      Address:"",
-      Phone:"",
-      Email:"",
+      FirstName: "",
+      LastName: "",
+      Thubmnail: "",
+      URL: "",
+      Description: "",
+      Keywords: "",
+      Address: "",
+      Phone: "",
+      Email: "",
       Socials: {
         Facebook: "xyz",
         WhatsApp: "xyz",
@@ -26,88 +26,77 @@ class App extends Component {
         LinkedIn: "xyz",
         GitHub: "xyz",
         StackOverflow: "xyz"
-      },
+      }
     },
     fileDownloadUrl: null
   };
 
-  toggleHeader=()=>{
+  toggleHeader = () => {
     this.setState({
-      Dark: !this.state.Dark,
-    })
+      Dark: !this.state.Dark
+    });
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
-      FormData:{
+      FormData: {
         ...this.state.FormData,
         [e.target.name]: e.target.value
-      }     
-    })
-  }
+      }
+    });
+  };
 
-  download=(event)=>{
+  download = () => {
     let output = he.decode(document.getElementsByClassName("codefile")[0].innerHTML);
     const blob = new Blob([output]);
     const fileDownloadUrl = URL.createObjectURL(blob);
-    this.setState({fileDownloadUrl: fileDownloadUrl}, 
-      ()=> {
-        this.doFileDownload.click();
-        URL.revokeObjectURL(fileDownloadUrl);
-        this.setState({fileDownloadUrl: ""});
-      });
-  }
+    this.setState({ fileDownloadUrl: fileDownloadUrl }, () => {
+      this.doFileDownload.click();
+      URL.revokeObjectURL(fileDownloadUrl);
+      this.setState({ fileDownloadUrl: "" });
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <Header dark={this.state.Dark} className='Header'>
+        <Header dark={this.state.Dark} className="Header">
           <span>Portfolio Generator</span>
-          <button 
-            className="btn btn-sm btn-outline-primary rounded-circle" 
-            onClick={this.toggleHeader}
-          >
-            <i 
-              className={"fa fa-" + (this.state.Dark ? "sun" : "moon") + "-o"}
-            ></i>
+          <button className="btn btn-sm btn-outline-primary rounded-circle" onClick={this.toggleHeader}>
+            <i className={"fa fa-" + (this.state.Dark ? "sun" : "moon") + "-o"}></i>
           </button>
         </Header>
-        <div className='container-fluid'>
+        <div className="container-fluid">
           {/* <div className='row'> */}
-            <Split
-              className="split"
-            >
+          <Split className="split">
             <div className="p-3" /*className='col-12 col-md-6'*/>
-              <Form FormData={{
-                FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
-                ...this.state.FormData
+              <Form
+                FormData={{
+                  FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
+                  ...this.state.FormData
                 }}
                 onChange={this.handleChange}
               />
-              <button 
+              <button
                 className="btn btn-success"
-                onClick={()=>{this.download()}}>
+                onClick={() => {
+                  this.download();
+                }}
+              >
                 Download
               </button>
-              <a 
-                className="d-none"
-                download={'portfolio.html'}
-                href={this.state.fileDownloadUrl}
-                ref={e=> this.doFileDownload = e}>
+              <a className="d-none" download={"portfolio.html"} href={this.state.fileDownloadUrl} ref={e => (this.doFileDownload = e)}>
                 Download
               </a>
             </div>
-            <div className="p-3"/*className='col-12 col-md-6'*/>
-              <Code 
-                {...this.state.FormData} 
-                FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
-              />
+            <div className="p-3" /*className='col-12 col-md-6'*/>
+              <Code {...this.state.FormData} FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`} />
             </div>
-            </Split>
+          </Split>
           {/* </div> */}
         </div>
       </div>
-    )
+    );
   }
 }
 
