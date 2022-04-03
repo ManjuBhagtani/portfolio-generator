@@ -44,7 +44,8 @@ class App extends Component {
       FormData: {
         ...this.state.FormData,
         [e.target.name]: e.target.value
-      }
+      },
+      PreviewMode: false
     });
   };
 
