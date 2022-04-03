@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-const Code = ({
+const Preview = ({
   FullName,
   Thubmnail,
   URL,
@@ -28,10 +28,7 @@ const Code = ({
     GitHub: ["github", "https://github.com"],
     StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"]
   };
-  return (
-    <div className="Code">
-      <pre className="border rounded bg-light p-3 codefile">
-        {`<!DOCTYPE html>
+  const finalHTML = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -220,8 +217,14 @@ ${Object.keys(Socials).map(
     <script src="https://startbootstrap.github.io/startbootstrap-resume/js/scripts.js"></script>
   </body>
 </html>
-`}
-      </pre>
+`;
+  return (
+    <div className="Preview">
+      <iframe
+        src={`data:text/html,${encodeURIComponent(finalHTML)}`}
+        frameborder="0"
+        title="Preview"
+      ></iframe>
     </div>
   );
 };
@@ -234,4 +237,4 @@ const mapStateToProps = state => ({
   skills: state.skills
 });
 
-export default connect(mapStateToProps)(Code);
+export default connect(mapStateToProps)(Preview);
