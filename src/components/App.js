@@ -4,6 +4,7 @@ import Split from "react-split";
 import Code from "./Code";
 import Form from "./Form";
 import he from "he";
+import Preview from "./Preview";
 
 class App extends Component {
   state = {
@@ -47,7 +48,9 @@ class App extends Component {
   };
 
   download = () => {
-    let output = he.decode(document.getElementsByClassName("codefile")[0].innerHTML);
+    let output = he.decode(
+      document.getElementsByClassName("codefile")[0].innerHTML
+    );
     const blob = new Blob([output]);
     const fileDownloadUrl = URL.createObjectURL(blob);
     this.setState({ fileDownloadUrl: fileDownloadUrl }, () => {
@@ -62,8 +65,13 @@ class App extends Component {
       <div className="App">
         <Header dark={this.state.Dark} className="Header">
           <span>Portfolio Generator</span>
-          <button className="btn btn-sm btn-outline-primary rounded-circle" onClick={this.toggleHeader}>
-            <i className={"fa fa-" + (this.state.Dark ? "sun" : "moon") + "-o"}></i>
+          <button
+            className="btn btn-sm btn-outline-primary rounded-circle"
+            onClick={this.toggleHeader}
+          >
+            <i
+              className={"fa fa-" + (this.state.Dark ? "sun" : "moon") + "-o"}
+            ></i>
           </button>
         </Header>
         <div className="container-fluid">
@@ -85,12 +93,24 @@ class App extends Component {
               >
                 Download
               </button>
-              <a className="d-none" download={"portfolio.html"} href={this.state.fileDownloadUrl} ref={e => (this.doFileDownload = e)}>
+              <a
+                className="d-none"
+                download={"portfolio.html"}
+                href={this.state.fileDownloadUrl}
+                ref={e => (this.doFileDownload = e)}
+              >
                 Download
               </a>
             </div>
             <div className="p-3" /*className='col-12 col-md-6'*/>
-              <Code {...this.state.FormData} FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`} />
+              <Preview
+                {...this.state.FormData}
+                FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
+              />
+              <Code
+                {...this.state.FormData}
+                FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
+              />
             </div>
           </Split>
           {/* </div> */}
