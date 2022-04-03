@@ -76,7 +76,6 @@ class App extends Component {
           </button>
         </Header>
         <div className="container-fluid">
-          {/* <div className='row'> */}
           <Split className="split">
             <div className="p-3" /*className='col-12 col-md-6'*/>
               <Form
@@ -91,6 +90,8 @@ class App extends Component {
                 onClick={() => {
                   this.download();
                 }}
+                disabled={this.state.PreviewMode}
+                title="Go to the Code View to download."
               >
                 Download
               </button>
@@ -149,7 +150,6 @@ class App extends Component {
               )}
             </div>
           </Split>
-          {/* </div> */}
         </div>
       </div>
     );
