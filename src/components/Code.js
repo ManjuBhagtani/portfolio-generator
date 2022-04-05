@@ -63,6 +63,9 @@ const Code = ({
     <link href="https://startbootstrap.github.io/startbootstrap-resume/css/styles.css" rel="stylesheet" />
     <style>.bg-primary {--bs-bg-opacity: 1; background-color: ${Colour} !important;}
            .social-icon:hover {background-color: ${Colour} !important;}
+           .text-primary {--bs-text-opacity: 1; color: ${Colour} !important;}
+           a {color: ${Colour};}
+           a:hover {color: ${Colour};}
     </style>
   </head>
   <body id="page-top">
