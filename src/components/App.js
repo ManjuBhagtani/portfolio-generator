@@ -4,6 +4,7 @@ import Split from "react-split";
 import Code from './Code';
 import Form from './Form';
 import he from 'he';
+import Template2Code from './PortfolioTemplates/Template2AnnaPeterson/Template2Code';
 
 class App extends Component {
   state={
@@ -98,7 +99,7 @@ class App extends Component {
               </a>
             </div>
             <div className="p-3"/*className='col-12 col-md-6'*/>
-              <Code 
+              <Template2Code 
                 {...this.state.FormData} 
                 FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
               />

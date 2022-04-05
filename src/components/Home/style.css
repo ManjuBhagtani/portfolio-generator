@@ -1,0 +1,5 @@
+.demo,
+.generate {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
