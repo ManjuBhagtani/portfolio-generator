@@ -5,6 +5,7 @@ import Code from "./Code";
 import Form from "./Form";
 import he from "he";
 import Preview from "./Preview";
+import Navigation from "./Navigation/Navigation";
 
 class App extends Component {
   state = {
@@ -77,82 +78,7 @@ class App extends Component {
             ></i>
           </button>
         </Header>
-        <div className="container-fluid">
-          <Split className="split">
-            <div className="p-3" /*className='col-12 col-md-6'*/>
-              <Form
-                FormData={{
-                  FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
-                  ...this.state.FormData
-                }}
-                onChange={this.handleChange}
-              />
-              <button
-                className="btn btn-success"
-                onClick={() => {
-                  this.download();
-                }}
-                disabled={this.state.PreviewMode}
-                title="Go to the Code View to download."
-              >
-                Download
-              </button>
-              <a
-                className="d-none"
-                download={"portfolio.html"}
-                href={this.state.fileDownloadUrl}
-                ref={e => (this.doFileDownload = e)}
-              >
-                Download
-              </a>
-            </div>
-            <div className="p-3" /*className='col-12 col-md-6'*/>
-              <ul className="nav nav-tabs mb-2">
-                <li className="nav-item">
-                  <span
-                    className={
-                      "nav-link " + (!this.state.PreviewMode ? "active" : "")
-                    }
-                    onClick={e => {
-                      e.preventDefault();
-                      this.setState({
-                        PreviewMode: false
-                      });
-                    }}
-                  >
-                    Code
-                  </span>
-                </li>
-                <li className="nav-item">
-                  <span
-                    className={
-                      "nav-link " + (this.state.PreviewMode ? "active" : "")
-                    }
-                    onClick={e => {
-                      e.preventDefault();
-                      this.setState({
-                        PreviewMode: true
-                      });
-                    }}
-                  >
-                    Preview
-                  </span>
-                </li>
-              </ul>
-              {this.state.PreviewMode ? (
-                <Preview
-                  {...this.state.FormData}
-                  FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
-                />
-              ) : (
-                <Code
-                  {...this.state.FormData}
-                  FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
-                />
-              )}
-            </div>
-          </Split>
-        </div>
+        <Navigation />
       </div>
     );
   }
