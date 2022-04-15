@@ -94,7 +94,10 @@ const UIConstants = {
                 Colour1: "#000",
                 Colour2: "#f393a4",
                 Colour3: "#362f47",
-                Colour4: "#7e5a7b"
+                Colour4: "#7e5a7b",
+                Experience: true,
+                Education: true, 
+                Skills: true,
             },
             Desc: {
                 FullName: [
@@ -155,7 +158,7 @@ const UIConstants = {
                     "Theme Colour",
                     "Please choose the colour for your portfolio"
                 ]        
-            }      
+            }     
         }],
         [{
             TemplateID: 2,
