@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Split from "react-split";
 import Form from './Form';
+import Code from './Code';
 import UIConstants from '../Constants/UIConstants';
 class GeneratePortfolio extends Component {
     state = {
@@ -34,7 +35,11 @@ class GeneratePortfolio extends Component {
                         />
                     </div>
                     <div className="p-3">
-
+                        <Code
+                            {...this.state.FormData}
+                            FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
+                            TemplateID={this.state.selectedTemplate}
+                        />
                     </div>
                 </Split>
             </div>
