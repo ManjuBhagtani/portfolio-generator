@@ -1,12 +1,14 @@
 import { connect } from "react-redux";
 import Template0 from "./PortfolioTemplates/Template0/Template0";
 import Template1 from "./PortfolioTemplates/Template1/Template1";
+import Template2 from "./PortfolioTemplates/Template2/Template2";
 
 const Code = ({FormData, FullName, TemplateID}) => {
   const renderTemplate = (templateID) =>{
     switch(templateID){
       case 0: return <Template0 FormData={FormData} FullName={FullName}/>
       case 1: return <Template1 FormData={FormData} FullName={FullName}/>
+      case 2: return <Template2 FormData={FormData} FullName={FullName}/>
       default:  return <Template0 FormData={FormData} FullName={FullName}/>
     }
   }
