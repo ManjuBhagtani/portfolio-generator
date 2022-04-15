@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const GeneratePortfolio = () => {
-  return (
-    <div>GeneratePortfolio</div>
-  )
+class GeneratePortfolio extends Component {
+    render() {
+        return (
+            <div>GeneratePortfolio</div>
+        )
+    }
 }
 
 export default GeneratePortfolio
