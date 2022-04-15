@@ -1,4 +1,9 @@
 import FormGroup from "../Bootstrap/FormGroup";
+import AwardList from "../Form/Awards/AwardList";
+import EducationList from "../Form/Education/EducationList";
+import ExperienceList from "../Form/Experience/ExperienceList";
+import InterestList from "../Form/Interests/InterestList";
+import SkillsList from "../Form/Skills/SkillsList";
 
 const Form = ({TemplateID, FormData, Desc, onChange }) => {
   
@@ -21,6 +26,36 @@ const Form = ({TemplateID, FormData, Desc, onChange }) => {
             />
           )
       )}
+      {FormData.Experience && 
+        <>
+            <h3>Experience</h3>
+            <ExperienceList />
+        </>
+      }
+      {FormData.Education && 
+        <>
+            <h3>Education</h3>
+            <EducationList />
+        </>
+      }
+      {FormData.Skills && 
+        <>
+            <h3>Skills</h3>
+            <SkillsList />
+        </>
+      }
+      {FormData.Interests && 
+        <>
+            <h3>Interests</h3>
+            <InterestList />
+        </>
+      }
+      {FormData.Awards && 
+          <>
+            <h3>Awards</h3>
+            <AwardList />
+        </>
+      }  
     </div>
   );
 };

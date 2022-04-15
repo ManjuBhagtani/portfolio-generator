@@ -24,7 +24,12 @@ const UIConstants = {
                     LinkedIn: "xyz",
                     GitHub: "xyz",
                     StackOverflow: "xyz"
-                }
+                },
+                Experience: true,
+                Education: true,
+                Skills: true,
+                Interests: true,
+                Awards: true,
             },
             Desc: {
                 FullName: [
