@@ -174,7 +174,7 @@ const UIConstants = {
                 FirstName: "",
                 LastName: "",
                 Tagline: "",
-                "Background/Banner Image": "",
+                BannerImage: "",
                 Thubmnail: "",
                 Keywords: "",
                 Description: "",  

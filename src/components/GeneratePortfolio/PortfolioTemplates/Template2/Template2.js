@@ -2,16 +2,16 @@ import { connect } from "react-redux";
 
 const Code = ({
   FullName,
-  Thubmnail,
-  URL,
-  Description,
-  Keywords,
   FirstName,
   LastName,
+  Tagline,
+  BannerImage,
+  Thubmnail,
+  Keywords, 
+  Description,
   Address,
   Phone,
   Email,
-  Socials,
   experiences,
   educations,
   skills,
@@ -19,15 +19,6 @@ const Code = ({
   awards,
   Colour
 }) => {
-  const Meta = {
-    Facebook: ["facebook-f", "https://fb.me/"],
-    WhatsApp: ["whatsapp", "https://wa.me/"],
-    Instagram: ["instagram", "https://instagr.am/"],
-    Twitter: ["twitter", "https://twitter.com/"],
-    LinkedIn: ["linkedin-in", "https://linkedin.com/in/"],
-    GitHub: ["github", "https://github.com"],
-    StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"]
-  };
   return (
     <div className="Code">
       <pre className="border rounded bg-light p-3 codefile">
@@ -38,11 +29,11 @@ const Code = ({
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Personal, Portfolio, Creative">
-        <meta name="description" content="Kalvin Portfolio Template">
+        <meta name="keywords" content="${Keywords}">
+        <meta name="description" content="${FirstName}'s Portfolio">
         <meta name="author" content="cosmos-themes">
 
-        <title>Kalvin - Portfolio Template</title>
+        <title>${FirstName} - Portfolio</title>
 
         <!-- favicon -->
         <link href="https://kalvin.netlify.app/images/favicon.ico" rel="icon" type="image/png">
@@ -75,7 +66,11 @@ const Code = ({
 
             gtag('config', 'UA-122650090-1');
         </script>
-
+        <style>
+            #home{
+                background-image: url(${BannerImage});
+            }
+        </style>
     </head>
 
     <body>
@@ -91,7 +86,7 @@ const Code = ({
             <div class="container">
                 <!-- LOGO -->
                 <a class="navbar-brand logo" href="index.html">
-                    Kalvin
+                    ${FirstName}
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,13 +121,13 @@ const Code = ({
         <!--Navbar End-->
 
         <!--Home Section Start-->
-        <section id="home" class="banner" style="background-image: url('https://kalvin.netlify.app/images/background/home-banner-bg.jpg')" data-stellar-background-ratio=".7" data-scroll-index="0">
+        <section id="home" class="banner" data-stellar-background-ratio=".7" data-scroll-index="0">
             <div class="container">
                 <!--Banner Content-->
                 <div class="banner-caption">
-                    <h1>Hi! I'm Kalvin.</h1>
+                    <h1>Hi! I'm ${FirstName}.</h1>
                     <p class="cd-headline clip mt-30">
-                        <span>Creative Designer & Developer located in New York.</span><br>
+                        <span>${Tagline}</span><br>
                     </p>
                 </div>
                 <div class="arrow bounce">
@@ -149,7 +144,7 @@ const Code = ({
                     <div class="col-lg-5 col-md-6">
                         <!--About Image-->
                         <div class="about-img">
-                            <img src="https://kalvin.netlify.app/images/about-img.jpg" alt="">
+                            <img src="${Thubmnail}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
@@ -157,9 +152,9 @@ const Code = ({
                         <div class="about-content">
                             <div class="about-heading">
                                 <h2>About Me.</h2>
-                                <span>UI/UX Designer & Web Developer</span>
+                                <span><!-- UI/UX Designer & Web Developer --></span>
                             </div>
-                            <p>I'm <b>Kalvin Doe</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
+                            <p>I'm <b>${FullName}.</b> ${Description}</p>
                             <!--About Social Icons-->
                             <div class="social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -600,29 +595,29 @@ const Code = ({
                     <div class="col-md-3 col-sm-6">
                         <!--Contant Item-->
                         <div class="contact-info">
-                            <h5>Kalvin</h5>
-                            <p>lorem Ipsum donor sit.</p>
+                            <h5>${FirstName}</h5>
+                            <p><!-- lorem Ipsum donor sit. --></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <!--Contant Item-->
                         <div class="contact-info">
                             <h5>Phone No.</h5>
-                            <p>(+1) 123 456 7890</p>
+                            <p>${Phone}</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <!--Contant Item-->
                         <div class="contact-info">
                             <h5>Email</h5>
-                            <p>info@example.com</p>
+                            <p>${Email}</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <!--Contant Item-->
                         <div class="contact-info">
                             <h5>Address</h5>
-                            <p>123 lorem ipsum New York, USA.</p>
+                            <p>${Address}</p>
                         </div>
                     </div>
                 </div>
@@ -630,7 +625,7 @@ const Code = ({
                     <div class="col-md-12">
                         <hr>
                         <p class="copy pt-30">
-                            Kalvin &copy; 2021. All Right Reserved.
+                            ${FirstName} &copy; 2021. All Right Reserved.
                         </p>
                     </div>
                 </div>
