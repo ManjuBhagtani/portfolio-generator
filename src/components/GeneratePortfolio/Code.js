@@ -11,7 +11,7 @@ const Code = ({FormData, FullName, TemplateID}) => {
       case 0: return <Template0 {...FormData} FullName={FullName}/>
       case 1: return <Template1 {...FormData} FullName={FullName}/>
       case 2: return <Template2 {...FormData} FullName={FullName}/>
-      case 3: return <Template3 FormData={FormData} FullName={FullName}/>
+      case 3: return <Template3 {...FormData} FullName={FullName}/>
       default:  return <Template0 FormData={FormData} FullName={FullName}/>
     }
   }

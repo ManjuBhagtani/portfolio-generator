@@ -2,32 +2,23 @@ import { connect } from "react-redux";
 
 const Code = ({
   FullName,
-  Thubmnail,
-  URL,
-  Description,
-  Keywords,
   FirstName,
   LastName,
+  Tagline,
+  Thubmnail,
+  Description,
+  Keywords,
   Address,
   Phone,
   Email,
-  Socials,
   experiences,
   educations,
   skills,
   interests,
   awards,
-  Colour
+  Colour1,
+  Colour2
 }) => {
-  const Meta = {
-    Facebook: ["facebook-f", "https://fb.me/"],
-    WhatsApp: ["whatsapp", "https://wa.me/"],
-    Instagram: ["instagram", "https://instagr.am/"],
-    Twitter: ["twitter", "https://twitter.com/"],
-    LinkedIn: ["linkedin-in", "https://linkedin.com/in/"],
-    GitHub: ["github", "https://github.com"],
-    StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"]
-  };
   return (
     <div className="Code">
       <pre className="border rounded bg-light p-3 codefile">
@@ -45,6 +36,79 @@ const Code = ({
       <link rel="stylesheet" href="https://preview.uideck.com/items/unfold/assets/css/magnific-popup.css">
       <link rel="stylesheet" href="https://preview.uideck.com/items/unfold/assets/css/default.css">
       <link rel="stylesheet" href="https://preview.uideck.com/items/unfold/assets/css/style.css">
+      <style>
+         .preloader .loader_34 .ytp-spinner-circle{
+            border-color:${Colour1} ${Colour1} #ddd;
+         }
+         .navigation .navbar .navbar-nav .nav-item:hover a{
+            color: ${Colour1};
+         }
+         .navigation .navbar .navbar-nav .nav-item.active a, .navigation .navbar .navbar-nav .nav-item:hover a {
+            color: ${Colour1};
+         }
+         .navigation .navbar .navbar-nav .nav-item a::before {
+            background-color: ${Colour1};
+         }
+         .header-social .header-social-icon ul li a:hover{
+            background-color:${Colour1};
+            border-color: ${Colour1};
+         }
+         .header-social .header-social-icon::before {
+            background-color: ${Colour1};
+         }
+         .main-btn {
+            border: 1px solid ${Colour1};
+            background-color: ${Colour1};
+         }
+         .main-btn:hover{
+            color:${Colour1};
+            border-color:${Colour1};
+         }
+         .header-content-right .sub-title{
+            color: ${Colour1};
+         }
+         .header-image::after {
+            background-color: ${Colour1};
+         }
+         .about-skills .skill-item .skill-bar .bar-inner .progress-line{
+            background-color: ${Colour1};
+         }
+         .single-service .service-content .service-title a:hover{
+            color: ${Colour1};
+         }
+         .call-to-action::before {
+            background-color: ${Colour1};
+         }
+         .call-action-content ul li .main-btn.custom{
+            color: ${Colour1};
+         }
+         .call-action-content ul li .main-btn.custom:hover{
+            background-color: ${Colour1};
+            border-color: ${Colour1};
+         }
+         .single-work .work-overlay{
+            background-color: ${Colour1};
+         }
+         .single-work .work-overlay .work-content ul li a:hover{
+            color: ${Colour1};
+         }
+         .single-blog:hover .blog-content{
+            background-color: ${Colour1};
+         }
+         .contact-box .contact-icon i {
+            color: ${Colour1};
+         }
+         .footer-content ul li a:hover{
+            background-color: ${Colour1};
+         }
+         .back-to-top:hover{
+            background-color: ${Colour1};
+            border-color: ${Colour1};
+         }
+         .single-form input:focus, .single-form textarea:focus{
+            border-color: ${Colour1};
+         }
+      </style>
    </head>
    <body>
       <div class="preloader">
@@ -128,14 +192,14 @@ const Code = ({
                   <div class="col-xl-5 col-lg-6">
                      <div class="header-content-right">
                         <h4 class="sub-title">Hello, I’m</h4>
-                        <h1 class="title">Mark Parker</h1>
-                        <p>A Freelance UI Designer & Web Developer</p>
+                        <h1 class="title">${FullName}</h1>
+                        <p>${Tagline}</p>
                         <a class="main-btn" href="#work">View my Work</a>
                      </div>
                   </div>
                   <div class="col-lg-6 offset-xl-1">
                      <div class="header-image d-none d-lg-block">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/banner/hero.png" alt="hero">
+                        <img src="${Thubmnail}" alt="hero">
                      </div>
                   </div>
                </div>
@@ -169,26 +233,16 @@ const Code = ({
             <div class="row">
                <div class="col-lg-6">
                   <div class="about-content mt-50">
-                     <h5 class="about-title">Hi There! I'm Mark Parker</h5>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                     <h5 class="about-title">Hi There! I'm ${FullName}</h5>
+                     <p>${Description}</p>
                      <ul class="clearfix">
-                        <li>
-                           <div class="single-info d-flex align-items-center">
-                              <div class="info-icon">
-                                 <i class="lni-calendar"></i>
-                              </div>
-                              <div class="info-text">
-                                 <p><span>Date of birth:</span> 8 June 1995</p>
-                              </div>
-                           </div>
-                        </li>
                         <li>
                            <div class="single-info d-flex align-items-center">
                               <div class="info-icon">
                                  <i class="lni-envelope"></i>
                               </div>
                               <div class="info-text">
-                                 <p><span>Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8b8a9baa3adba88a5b1bba1bcade6aba7a5">[email&#160;protected]</a></p>
+                                 <p><span>Email:</span> <a href="mailto:${Email}">${Email}</a></p>
                               </div>
                            </div>
                         </li>
@@ -198,7 +252,7 @@ const Code = ({
                                  <i class="lni-phone-handset"></i>
                               </div>
                               <div class="info-text">
-                                 <p><span>Phone:</span> +1-202-555-0138</p>
+                                 <p><span>Phone:</span> ${Phone} </p>
                               </div>
                            </div>
                         </li>
@@ -208,7 +262,7 @@ const Code = ({
                                  <i class="lni-map-marker"></i>
                               </div>
                               <div class="info-text">
-                                 <p><span>Location:</span> 4373, El Centro, CA</p>
+                                 <p><span>Location:</span> ${Address}</p>
                               </div>
                            </div>
                         </li>
@@ -365,7 +419,7 @@ const Code = ({
             </div>
          </div>
       </section>
-      <section id="call-to-action" class="call-to-action pt-125 pb-130 bg_cover" style="background-image: url(assets/images/call-to-action.jpg)">
+      <section id="call-to-action" class="call-to-action pt-125 pb-130 bg_cover" style="background-image: url(https://preview.uideck.com/items/unfold/assets/images/call-to-action.jpg)">
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-xl-8 col-lg-9">
@@ -567,7 +621,7 @@ const Code = ({
                      </div>
                      <div class="contact-content">
                         <h6 class="contact-title">Address</h6>
-                        <p>123 Stree New York City , United States Of America 750</p>
+                        <p>${Address}</p>
                      </div>
                   </div>
                </div>
@@ -578,8 +632,7 @@ const Code = ({
                      </div>
                      <div class="contact-content">
                         <h6 class="contact-title">Phone</h6>
-                        <p>+931 2222 5555</p>
-                        <p>+547 5554 6663</p>
+                        <p>${Phone}</p>
                      </div>
                   </div>
                </div>
@@ -590,8 +643,7 @@ const Code = ({
                      </div>
                      <div class="contact-content">
                         <h6 class="contact-title">Email</h6>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f98a8c8989968b8db980968c8b94989095d79a9694">[email&#160;protected]</a></p>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e272028210e262b223e2227202b602d2123">[email&#160;protected]</a></p>
+                        <p><a href="mailto:${Email}">${Email}</a></p>
                      </div>
                   </div>
                </div>
@@ -651,7 +703,7 @@ const Code = ({
                <div class="row">
                   <div class="col-lg-12">
                      <div class="copyright-text text-center pt-20">
-                        <p>Copyright © 2022. All rights reserved by Mark Parker.</p>
+                        <p>Copyright © 2022. All rights reserved by ${FullName}.</p>
                      </div>
                   </div>
                </div>
