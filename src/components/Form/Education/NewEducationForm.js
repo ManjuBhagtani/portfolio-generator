@@ -110,7 +110,7 @@ const NewEducationForm = ({ educations=[], onCreatePressed }) =>{
 }
 
 const mapStateToProps = state =>({
-    experiences: state.educations,
+    educations: state.educations,
 });
 
 const mapDispatchToProps = dispatch => ({
