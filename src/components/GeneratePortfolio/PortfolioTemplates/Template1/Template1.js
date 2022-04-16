@@ -2,32 +2,24 @@ import { connect } from "react-redux";
 
 const Code = ({
   FullName,
+  FirstName,
+  LastName,
   Thubmnail,
+  Tagline,
   URL,
   Description,
   Keywords,
-  FirstName,
-  LastName,
-  Address,
+  City,
   Phone,
   Email,
-  Socials,
+  Colour1,
+  Colour2,
+  Colour3,
+  Colour4,
   experiences,
   educations,
-  skills,
-  interests,
-  awards,
-  Colour
+  skills, 
 }) => {
-  const Meta = {
-    Facebook: ["facebook-f", "https://fb.me/"],
-    WhatsApp: ["whatsapp", "https://wa.me/"],
-    Instagram: ["instagram", "https://instagr.am/"],
-    Twitter: ["twitter", "https://twitter.com/"],
-    LinkedIn: ["linkedin-in", "https://linkedin.com/in/"],
-    GitHub: ["github", "https://github.com"],
-    StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"]
-  };
   return (
     <div className="Code">
       <pre className="border rounded bg-light p-3 codefile">
@@ -228,7 +220,7 @@ const Code = ({
                                     <div class="elementor-widget-wrap">
                                        <div class="elementor-element elementor-element-59838137 elementor-widget elementor-widget-image" data-id="59838137" data-element_type="widget" data-widget_type="image.default">
                                           <div class="elementor-widget-container">
-                                             <div class="elementor-image"> <img width="600" height="760" src="https://demo.cocobasic.com/teoro-wp/demo-1/wp-content/uploads/2020/08/main_01.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://demo.cocobasic.com/teoro-wp/demo-1/wp-content/uploads/2020/08/main_01.jpg 600w, https://demo.cocobasic.com/teoro-wp/demo-1/wp-content/uploads/2020/08/main_01-237x300.jpg 237w" sizes="(max-width: 600px) 100vw, 600px" /></div>
+                                             <div class="elementor-image"> <img width="600" height="760" src=${Thubmnail} class="attachment-full size-full" alt="" loading="lazy" srcset=${Thubmnail} sizes="(max-width: 600px) 100vw, 600px" /></div>
                                           </div>
                                        </div>
                                     </div>
@@ -244,7 +236,7 @@ const Code = ({
                                        </div>
                                        <div class="elementor-element elementor-element-7ac381db elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="7ac381db" data-element_type="widget" data-widget_type="text-editor.default">
                                           <div class="elementor-widget-container">
-                                             <div class="elementor-text-editor elementor-clearfix" title="Tagline"> A full stack developer</div>
+                                             <div class="elementor-text-editor elementor-clearfix" title="Tagline"> ${Tagline}</div>
                                           </div>
                                        </div>
                                        <div class="elementor-element elementor-element-160c4806 cocobasic-left-rigt elementor-widget__width-initial elementor-absolute elementor-widget elementor-widget-image" data-id="160c4806" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
@@ -278,7 +270,7 @@ const Code = ({
                                        <div class="elementor-element elementor-element-35fa5410 elementor-widget elementor-widget-text-editor" data-id="35fa5410" data-element_type="widget" data-widget_type="text-editor.default">
                                           <div class="elementor-widget-container">
                                              <div class="elementor-text-editor elementor-clearfix" title="About">
-                                                <p>I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                                                <p>${Description}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -292,7 +284,7 @@ const Code = ({
                                                             <div class="elementor-widget-container">
                                                                <div class="elementor-text-editor elementor-clearfix">
                                                                   <p><strong>NAME:</strong> <span title="Full name">${FullName}</span><br />
-																	<strong>CITY:</strong> <span title="Address">${Address}</span><br />
+																	<strong>CITY:</strong> <span title="City">${City}</span><br />
 																	<strong>PHONE:</strong> <span title="Phone number">${Phone}</span><br />
 																	<strong>EMAIL:</strong> <span title="Email">${Email}</span><br />
 																	<strong>WEBSITE:</strong> <span title="Website">${URL}</span></p>

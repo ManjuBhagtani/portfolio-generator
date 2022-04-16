@@ -85,10 +85,11 @@ const UIConstants = {
                 FirstName: "",
                 LastName: "",
                 Thubmnail: "",
+                Tagline: "",
                 URL: "",
                 Description: "",
                 Keywords: "",
-                Address: "",
+                City: "",
                 Phone: "",
                 Email: "",
                 Colour1: "#000",
@@ -116,6 +117,11 @@ const UIConstants = {
                     "Your Photo",
                     "Please upload your photo in a CDN(Ex. Imgur) and paste the direct image URL here."
                 ],
+                Tagline: [
+                    "text",
+                    "Tagline",
+                    "Please enter your tagline."
+                ],
                 URL: [
                     "text",
                     "Website link",
@@ -127,7 +133,7 @@ const UIConstants = {
                     "Keywords",
                     "If someone wants to search for you, what keywords should they use?"
                 ],
-                Address: [
+                City: [
                     "text",
                     "Where are you?",
                     "Type in your full address to get kidnapped!"
