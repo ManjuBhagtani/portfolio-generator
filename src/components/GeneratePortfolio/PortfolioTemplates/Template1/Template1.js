@@ -734,61 +734,23 @@ const Code = ({
                                        <div class="elementor-element elementor-element-ac823f1 elementor-widget elementor-widget-toggle" data-id="ac823f1" data-element_type="widget" data-widget_type="toggle.default">
                                           <div class="elementor-widget-container">
                                              <div class="elementor-toggle" role="tablist">
+                                             ${experiences.map(
+                                                experience => `
                                                 <div class="elementor-toggle-item">
                                                    <div id="elementor-tab-title-1801" class="elementor-tab-title" data-tab="1" role="tab" aria-controls="elementor-tab-content-1801" aria-expanded="false"> 
 													<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true"> 
 														<span class="elementor-toggle-icon-closed"><i class="fa fa-caret-down"></i></span> 
 														<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fa fa-caret-up"></i></span> 
 													</span> 
-													<a href="" class="elementor-toggle-title" title="Role">Photography Assistant</a></div>
+													<a href="" class="elementor-toggle-title" title="Role">${experience.experience.position}</a></div>
 													<div id="elementor-tab-content-1801" class="elementor-tab-content elementor-clearfix" data-tab="1" role="tabpanel" aria-labelledby="elementor-tab-title-1801">
-                                                      <p title="Company"><strong>INTELITEC SOLUTIONS</strong></p>
-													  <p><strong><span title="Start">2012</span> &#8211; <span title="End">2014</span></strong></p>
-                                                      <p title="Role Description">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+                                                      <p title="Company"><strong>${experience.experience.company}</strong></p>
+													  <p><strong><span title="Start">${experience.experience.start}</span> &#8211; <span title="End">2014</span></strong></p>
+                                                      <p title="Role Description">${experience.experience.desc}</p>
                                                    </div>
                                                 </div>
-                                                <div class="elementor-toggle-item">
-													<div id="elementor-tab-title-1802" class="elementor-tab-title" data-tab="2" role="tab" aria-controls="elementor-tab-content-1802" aria-expanded="false"> 
-														<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true"> 
-															<span class="elementor-toggle-icon-closed"><i class="fa fa-caret-down"></i></span> 
-															<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fa fa-caret-up"></i></span> 
-														</span> 
-														<a href="" class="elementor-toggle-title" title="Role">Junior Designer</a>
-													</div>
-													<div id="elementor-tab-content-1802" class="elementor-tab-content elementor-clearfix" data-tab="2" role="tabpanel" aria-labelledby="elementor-tab-title-1802">
-                                                      <p title="Company"><strong>INTELITEC SOLUTIONS</strong></p>
-													  <p><strong><span title="Start">2012</span> &#8211; <span title="End">2014</span></strong></p>
-                                                      <p title="Role Description">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                                                   </div>
-                                                </div>
-                                                <div class="elementor-toggle-item">
-													<div id="elementor-tab-title-1803" class="elementor-tab-title" data-tab="3" role="tab" aria-controls="elementor-tab-content-1803" aria-expanded="false"> 
-														<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true"> 
-															<span class="elementor-toggle-icon-closed"><i class="fa fa-caret-down"></i></span> 
-															<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fa fa-caret-up"></i></span> 
-														</span> 
-														<a href="" class="elementor-toggle-title" title="Role">Senior Designer</a>
-													</div>
-													<div id="elementor-tab-content-1803" class="elementor-tab-content elementor-clearfix" data-tab="3" role="tabpanel" aria-labelledby="elementor-tab-title-1803">
-                                                      <p title="Company"><strong>INTELITEC SOLUTIONS</strong></p>
-													  <p><strong><span title="Start">2012</span> &#8211; <span title="End">2014</span></strong></p>
-                                                      <p title="Role Description">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                                                   </div>
-                                                </div>
-                                                <div class="elementor-toggle-item">
-													<div id="elementor-tab-title-1804" class="elementor-tab-title" data-tab="4" role="tab" aria-controls="elementor-tab-content-1804" aria-expanded="false"> 
-														<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true"> 
-															<span class="elementor-toggle-icon-closed"><i class="fa fa-caret-down"></i></span> 
-															<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fa fa-caret-up"></i></span> 
-														</span> 
-														<a href="" class="elementor-toggle-title" title="Role">Team Leader</a>
-													</div>
-													<div id="elementor-tab-content-1804" class="elementor-tab-content elementor-clearfix" data-tab="4" role="tabpanel" aria-labelledby="elementor-tab-title-1804">
-                                                      <p title="Company"><strong>INTELITEC SOLUTIONS</strong></p>
-													  <p><strong><span title="Start">2012</span> &#8211; <span title="End">2014</span></strong></p>
-                                                      <p title="Role Description">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                                                   </div>
-                                                </div>
+                                             `).join(`
+                                             `)}                     
                                              </div>
                                           </div>
                                        </div>
