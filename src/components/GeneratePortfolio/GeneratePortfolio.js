@@ -69,7 +69,7 @@ class GeneratePortfolio extends Component {
                     </div>
                     <div className="p-3">
                         <Code
-                            {...this.state.FormData}
+                            FormData={this.state.FormData}
                             FullName={`${this.state.FormData.FirstName} ${this.state.FormData.LastName}`}
                             TemplateID={this.state.selectedTemplate}
                         />
