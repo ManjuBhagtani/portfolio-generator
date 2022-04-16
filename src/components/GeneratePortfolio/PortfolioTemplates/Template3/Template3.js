@@ -11,13 +11,15 @@ const Code = ({
   Address,
   Phone,
   Email,
+  Colour1,
+  Colour2,
+  services,
   experiences,
   educations,
   skills,
   interests,
   awards,
-  Colour1,
-  Colour2
+
 }) => {
   return (
     <div className="Code">
@@ -350,72 +352,22 @@ const Code = ({
                </div>
             </div>
             <div class="row justify-content-center">
-               <div class="col-lg-4 col-md-6 col-sm-8">
+               ${services.map(
+                  service => `
+                  <div class="col-lg-4 col-md-6 col-sm-8">
                   <div class="single-service text-center mt-30">
                      <div class="service-icon">
                         <i class="fa-solid fa-display-code"></i>
                      </div>
                      <div class="service-content">
-                        <h4 class="service-title"><a href="#">Web Design</a></h4>
-                        <p>Curabitur vitae magna felis. Nulla ac libero ornare, vestibulum lacus quis blandit enimdicta sunt.</p>
+                        <h4 class="service-title"><a href="#">${service.serviceName}</a></h4>
+                        <p>${service.desc}</p>
                      </div>
                   </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-8">
-                  <div class="single-service text-center mt-30">
-                     <div class="service-icon">
-                        <i class="lni-color-pallet"></i>
-                     </div>
-                     <div class="service-content">
-                        <h4 class="service-title"><a href="#contact">Graphic Design</a></h4>
-                        <p>Curabitur vitae magna felis. Nulla ac libero ornare, vestibulum lacus quis blandit enimdicta sunt.</p>
-                     </div>
                   </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-8">
-                  <div class="single-service text-center mt-30">
-                     <div class="service-icon">
-                        <i class="lni-mobile"></i>
-                     </div>
-                     <div class="service-content">
-                        <h4 class="service-title"><a href="#">App Design</a></h4>
-                        <p>Curabitur vitae magna felis. Nulla ac libero ornare, vestibulum lacus quis blandit enimdicta sunt.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-8">
-                  <div class="single-service text-center mt-30">
-                     <div class="service-icon">
-                        <i class="lni-vector"></i>
-                     </div>
-                     <div class="service-content">
-                        <h4 class="service-title"><a href="#">Illustration Design</a></h4>
-                        <p>Curabitur vitae magna felis. Nulla ac libero ornare, vestibulum lacus quis blandit enimdicta sunt.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-8">
-                  <div class="single-service text-center mt-30">
-                     <div class="service-icon">
-                        <i class="lni-website"></i>
-                     </div>
-                     <div class="service-content">
-                        <h4 class="service-title"><a href="#">Web Development</a></h4>
-                        <p>Curabitur vitae magna felis. Nulla ac libero ornare, vestibulum lacus quis blandit enimdicta sunt.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-8">
-                  <div class="single-service text-center mt-30">
-                     <div class="service-icon">
-                        <i class="lni-support"></i>
-                     </div>
-                     <div class="service-content">
-                        <h4 class="service-title"><a href="#">Consultancy and Support</a></h4>
-                        <p>Curabitur vitae magna felis. Nulla ac libero ornare, vestibulum lacus quis blandit enimdicta sunt.</p>
-                     </div>
-                  </div>
-               </div>
+                  `
+               ).join(`
+`)}
             </div>
          </div>
       </section>
@@ -739,7 +691,8 @@ const mapStateToProps = state => ({
   educations: state.educations,
   awards: state.awards,
   interests: state.interests,
-  skills: state.skills
+  skills: state.skills,
+  services: state.services,
 });
 
 export default connect(mapStateToProps)(Code);

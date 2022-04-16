@@ -3,6 +3,7 @@ import AwardList from "../Form/Awards/AwardList";
 import EducationList from "../Form/Education/EducationList";
 import ExperienceList from "../Form/Experience/ExperienceList";
 import InterestList from "../Form/Interests/InterestList";
+import ServiceList from "../Form/Services/ServiceList";
 import SkillsList from "../Form/Skills/SkillsList";
 
 const Form = ({TemplateID, FormData, Desc, onChange }) => {
@@ -51,9 +52,15 @@ const Form = ({TemplateID, FormData, Desc, onChange }) => {
         </>
       }
       {FormData.Awards && 
-          <>
+        <>
             <h3>Awards</h3>
             <AwardList />
+        </>
+      }
+      {FormData.Services &&
+        <>
+          <h3>Services</h3>
+          <ServiceList />
         </>
       }  
     </div>
