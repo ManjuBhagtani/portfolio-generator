@@ -548,7 +548,7 @@ const Code = ({
                                           <div class="elementor-widget-container">
                                              <ul class="timeline-holder">
                                                 ${educations.map(
-                                                    education => 
+                                                    education => `
                                                     <li class="timeline-event">
                                                         <span class="timeline-circle"></span>
                                                         <div class="timeline-event-content">
@@ -556,9 +556,19 @@ const Code = ({
                                                             <span title="University/College">${education.education.university}</span><br/>
                                                             <span title="GPA">${education.education.gpa}</span><br/>
                                                         </div>
-                                                        <div class="timeline-event-date" title="End date">${education.education.end}</div>
-                                                    </li>    
-                                                )}												                                        
+                                                        <div class="timeline-event-date" title="End date">
+                                                            ${
+                                                               education.education.end
+                                                                  ? education.education.end
+                                                                  : education.education.presentUniversity
+                                                                  ? "Present"
+                                                                  : ""
+                                                            }
+                                                        </div>
+                                                    </li>
+                                                    `
+                                                ).join(`
+`)}
                                              </ul>
                                           </div>
                                        </div>
