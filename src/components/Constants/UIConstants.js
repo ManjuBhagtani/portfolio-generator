@@ -183,6 +183,7 @@ const UIConstants = {
                 Phone: "",
                 Email: "",
                 Services: true,
+                Facts: true,
             },
             Desc: {
                 FullName: [

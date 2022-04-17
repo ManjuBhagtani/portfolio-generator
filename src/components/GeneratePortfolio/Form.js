@@ -2,6 +2,7 @@ import FormGroup from "../Bootstrap/FormGroup";
 import AwardList from "../Form/Awards/AwardList";
 import EducationList from "../Form/Education/EducationList";
 import ExperienceList from "../Form/Experience/ExperienceList";
+import FactList from "../Form/Facts/FactList";
 import InterestList from "../Form/Interests/InterestList";
 import ServiceList from "../Form/Services/ServiceList";
 import SkillsList from "../Form/Skills/SkillsList";
@@ -63,6 +64,12 @@ const Form = ({TemplateID, FormData, Desc, onChange }) => {
           <ServiceList />
         </>
       }  
+      {FormData.Facts &&
+        <>
+          <h3>Facts/Statistics</h3>
+          <FactList />
+        </>
+      }
     </div>
   );
 };
