@@ -12,6 +12,7 @@ const Code = ({
   Address,
   Phone,
   Email,
+  services,
   experiences,
   educations,
   skills,
@@ -185,66 +186,21 @@ const Code = ({
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <!--Service Item-->
-                        <div class="service-item">
-                            <span class="icon">
-                                <i class="fa fa-laptop"></i>
-                            </span>
-                            <h4>Web Design</h4>
-                            <p>Lorem Ipsum is simply dummy text of the Lorem has been the industry's standard dummy text ever.</p>
+                    ${services.map(
+                        service => `
+                        <div class="col-md-4">
+                            <!--Service Item-->
+                            <div class="service-item">
+                                <span class="icon">
+                                    <i class="fa fa-laptop"></i>
+                                </span>
+                                <h4>${service.serviceName}</h4>
+                                <p>${service.desc}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <!--Service Item-->
-                        <div class="service-item">
-                            <span class="icon">
-                                <i class="fa fa-gears"></i>
-                            </span>
-                            <h4>Web Development</h4>
-                            <p>Lorem Ipsum is simply dummy text of the Lorem has been the industry's standard dummy text ever.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <!--Service Item-->
-                        <div class="service-item">
-                            <span class="icon">
-                                <i class="fa fa-mobile"></i>
-                            </span>
-                            <h4>Responsive Design</h4>
-                            <p>Lorem Ipsum is simply dummy text of the Lorem has been the industry's standard dummy text ever.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <!--Service Item-->
-                        <div class="service-item">
-                            <span class="icon">
-                                <i class="fa fa-rocket"></i>
-                            </span>
-                            <h4>Branding Identity</h4>
-                            <p>Lorem Ipsum is simply dummy text of the Lorem has been the industry's standard dummy text ever.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <!--Service Item-->
-                        <div class="service-item">
-                            <span class="icon">
-                                <i class="fa fa-pencil"></i>
-                            </span>
-                            <h4>Creative Design</h4>
-                            <p>Lorem Ipsum is simply dummy text of the Lorem has been the industry's standard dummy text ever.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <!--Service Item-->
-                        <div class="service-item">
-                            <span class="icon">
-                                <i class="fa fa-support"></i>
-                            </span>
-                            <h4>Support</h4>
-                            <p>Lorem Ipsum is simply dummy text of the Lorem has been the industry's standard dummy text ever.</p>
-                        </div>
-                    </div>
+                        `
+                    ).join(`
+`)}
                 </div>
             </div>
         </section>
@@ -665,7 +621,8 @@ const mapStateToProps = state => ({
   educations: state.educations,
   awards: state.awards,
   interests: state.interests,
-  skills: state.skills
+  skills: state.skills,
+  services: state.services,
 });
 
 export default connect(mapStateToProps)(Code);
