@@ -14,6 +14,7 @@ const Code = ({
   Colour1,
   Colour2,
   services,
+  projects,
   experiences,
   educations,
   skills,
@@ -397,102 +398,27 @@ const Code = ({
                </div>
             </div>
             <div class="row">
+            ${projects.map(
+                        project => `
                <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="single-work text-center mt-30">
                      <div class="work-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/work/w-1.jpg" alt="work">
+                        <img src="${project.screenshot}" alt="work">
                      </div>
                      <div class="work-overlay">
                         <div class="work-content">
                            <h3 class="work-title">Product Design</h3>
                            <ul>
-                              <li><a class="image-popup" href="https://preview.uideck.com/items/unfold/assets/images/work/w-1.jpg"><i class="fa fa-plus"></i></a></li>
-                              <li><a href="#"><i class="fa fa-link"></i></a></li>
+                              <li><a class="image-popup" href="${project.screenshot}"><i class="fa fa-plus"></i></a></li>
+                              <li><a href="${project.deployedLink}" target="_blank"><i class="fa fa-link"></i></a></li>
+                              <li><a href="${project.github}" target="_blank"><i class="fa fa-github"></i></a></li>
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-work text-center mt-30">
-                     <div class="work-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/work/w-2.jpg" alt="work">
-                     </div>
-                     <div class="work-overlay">
-                        <div class="work-content">
-                           <h3 class="work-title">Product Design</h3>
-                           <ul>
-                              <li><a class="image-popup" href="https://preview.uideck.com/items/unfold/assets/images/work/w-2.jpg"><i class="fa fa-plus"></i></a></li>
-                              <li><a href="#"><i class="fa fa-link"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-work text-center mt-30">
-                     <div class="work-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/work/w-3.jpg" alt="work">
-                     </div>
-                     <div class="work-overlay">
-                        <div class="work-content">
-                           <h3 class="work-title">Product Design</h3>
-                           <ul>
-                              <li><a class="image-popup" href="https://preview.uideck.com/items/unfold/assets/images/work/w-3.jpg"><i class="fa fa-plus"></i></a></li>
-                              <li><a href="#"><i class="fa fa-link"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-work text-center mt-30">
-                     <div class="work-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/work/w-4.jpg" alt="work">
-                     </div>
-                     <div class="work-overlay">
-                        <div class="work-content">
-                           <h3 class="work-title">Product Design</h3>
-                           <ul>
-                              <li><a class="image-popup" href="https://preview.uideck.com/items/unfold/assets/images/work/w-4.jpg"><i class="fa fa-plus"></i></a></li>
-                              <li><a href="#"><i class="fa fa-link"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-work text-center mt-30">
-                     <div class="work-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/work/w-5.jpg" alt="work">
-                     </div>
-                     <div class="work-overlay">
-                        <div class="work-content">
-                           <h3 class="work-title">Product Design</h3>
-                           <ul>
-                              <li><a class="image-popup" href="https://preview.uideck.com/items/unfold/assets/images/work/w-5.jpg"><i class="fa fa-plus"></i></a></li>
-                              <li><a href="#"><i class="fa fa-link"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-work text-center mt-30">
-                     <div class="work-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/work/w-6.jpg" alt="work">
-                     </div>
-                     <div class="work-overlay">
-                        <div class="work-content">
-                           <h3 class="work-title">Product Design</h3>
-                           <ul>
-                              <li><a class="image-popup" href="https://preview.uideck.com/items/unfold/assets/images/work/w-6.jpg"><i class="fa fa-plus"></i></a></li>
-                              <li><a href="#"><i class="fa fa-link"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               `).join(`
+               `)}
             </div>
             <div class="row">
                <div class="col-lg-12">
@@ -693,6 +619,7 @@ const mapStateToProps = state => ({
   interests: state.interests,
   skills: state.skills,
   services: state.services,
+  projects: state.projects,
 });
 
 export default connect(mapStateToProps)(Code);

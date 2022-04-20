@@ -184,6 +184,7 @@ const UIConstants = {
                 Email: "",
                 Services: true,
                 Facts: true,
+                Projects: true,
             },
             Desc: {
                 FullName: [
@@ -253,6 +254,7 @@ const UIConstants = {
                 Colour1: "#754ef9",
                 Colour2: "#152136",
                 Services: true,
+                Projects: true,
             },
             Desc: {
                FullName: [
