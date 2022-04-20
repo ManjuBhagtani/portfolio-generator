@@ -7,6 +7,7 @@ import { skills } from "./components/Form/Skills/reducers";
 import { services } from "./components/Form/Services/reducers";
 import { facts } from "./components/Form/Facts/reducers";
 import { projects } from "./components/Form/Projects/reducers";
+import { blogs } from "./components/Form/Blogs/reducers";
 
 const reducers = {
     experiences,
@@ -17,6 +18,7 @@ const reducers = {
     services,
     facts,
     projects,
+    blogs,
 };
 
 const rootReducer = combineReducers(reducers);
