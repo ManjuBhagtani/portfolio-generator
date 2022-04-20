@@ -15,6 +15,7 @@ const Code = ({
   Colour2,
   services,
   projects,
+  blogs,
   experiences,
   educations,
   skills,
@@ -110,6 +111,9 @@ const Code = ({
          }
          .single-form input:focus, .single-form textarea:focus{
             border-color: ${Colour1};
+         }
+         .blog-image {
+            background-color: ${Colour1};
          }
       </style>
    </head>
@@ -439,39 +443,20 @@ const Code = ({
                </div>
             </div>
             <div class="row justify-content-center">
+               ${blogs.map(blog => `
                <div class="col-lg-4 col-md-8 col-sm-9">
                   <div class="single-blog mt-30">
                      <div class="blog-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/blog/b-1.jpg" alt="Blog">
+                        <img src="https://img.wallpapersafari.com/desktop/800/450/12/83/vZylnb.png" alt="Blog">
                      </div>
                      <div class="blog-content">
-                        <h4 class="blog-title"><a href="blog-details.html">Hired Releases 2023 Brand Health.</a></h4>
+                        <h4 class="blog-title"><a href="${blog.link}">${blog.blogTitle}</a></h4>
                         <span>July 26, 2022</span>
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-8 col-sm-9">
-                  <div class="single-blog mt-30">
-                     <div class="blog-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/blog/b-2.jpg" alt="Blog">
-                     </div>
-                     <div class="blog-content">
-                        <h4 class="blog-title"><a href="blog-details.html">Hired Releases 2023 Brand Health.</a></h4>
-                        <span>July 26, 2022</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-8 col-sm-9">
-                  <div class="single-blog mt-30">
-                     <div class="blog-image">
-                        <img src="https://preview.uideck.com/items/unfold/assets/images/blog/b-3.jpg" alt="Blog">
-                     </div>
-                     <div class="blog-content">
-                        <h4 class="blog-title"><a href="blog-details.html">Hired Releases 2023 Brand Health.</a></h4>
-                        <span>July 26, 2022</span>
-                     </div>
-                  </div>
-               </div>
+               `).join(`
+               `)}
             </div>
             <div class="row">
                <div class="col-lg-12">
@@ -620,6 +605,7 @@ const mapStateToProps = state => ({
   skills: state.skills,
   services: state.services,
   projects: state.projects,
+  blogs: state.blogs,
 });
 
 export default connect(mapStateToProps)(Code);

@@ -255,6 +255,7 @@ const UIConstants = {
                 Colour2: "#152136",
                 Services: true,
                 Projects: true,
+                Blogs: true,
             },
             Desc: {
                FullName: [

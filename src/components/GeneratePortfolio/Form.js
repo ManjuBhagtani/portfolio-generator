@@ -1,5 +1,6 @@
 import FormGroup from "../Bootstrap/FormGroup";
 import AwardList from "../Form/Awards/AwardList";
+import BlogList from "../Form/Blogs/BlogList";
 import EducationList from "../Form/Education/EducationList";
 import ExperienceList from "../Form/Experience/ExperienceList";
 import FactList from "../Form/Facts/FactList";
@@ -69,6 +70,12 @@ const Form = ({TemplateID, FormData, Desc, onChange }) => {
         <>
           <h3>Projects</h3>
           <ProjectList/>
+        </>
+      }
+      {FormData.Blogs &&
+        <>
+          <h3>Blogs</h3>
+          <BlogList/>
         </>
       }
       {FormData.Facts &&
